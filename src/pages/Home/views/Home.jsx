@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div>
       <Slider />
-      <CardHeader title={"Today's"} subtitle={"Flash Sales"} timer={true} />
+      <CardHeader title={"Today"} subtitle={"Flash Sales"} timer={true} />
       <div class="m-auto w-[85%] flex overflow-x-auto gap-[30px]  ">
         <ProductCard />
         <ProductCard />/
