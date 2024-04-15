@@ -13,8 +13,8 @@ import Apple from "../Footer/assets/ap.png";
 const Footer = () => {
   return (
     <footer className=" h-[440px] bg-black">
-      <div className=" w-full max-w-screen-xl">
-        <div className="flex justify-between gap-[80px] ml-[135px]  ">
+      <div>
+        <div className="flex justify-between gap-[24px] ml-[135px] mr-[135px]  ">
           <div className="w-[217px] flex flex-col gap-6 mt-[80px] ">
             <h2 className="text-[24px] font-[700] font-inter text-[--title-color]">
               Exclusive
