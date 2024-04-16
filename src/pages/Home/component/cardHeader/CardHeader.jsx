@@ -2,11 +2,12 @@ import React from "react";
 import Timer from "../cardHeader/Timer";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
+import Button1 from "../buttons/Button1";
 
 const CategoryHeader = (props) => {
   return (
     <>
-      <div class=" mt-[50px] ml-[100px] mb-[50px]">
+      <div class=" mt-[50px] ml-[65px] mb-[50px]">
         <div class="flex gap-[15px]">
           <div class="w-[20px] h-[40px] bg-[#db4444] rounded"></div>
           <div class="text-[#db4444] text-base mt-[10px]">{props.title}</div>
@@ -25,14 +26,20 @@ const CategoryHeader = (props) => {
               <div></div>
             )}
           </div>
-          <div class="flex gap-[4px] justify-center mt-[30px] mr-[130px]">
-            <div class="w-[46px] h-[46px] flex gap-[2px] justify-center items-center  rounded-full bg-[#f5f5f5]">
-              <FaArrowLeft class="" />
+          {props.arrow === true ? (
+            <div class="flex gap-[4px] justify-center mt-[30px] mr-[65px]">
+              <div class="w-[46px] h-[46px] flex gap-[2px] justify-center items-center  rounded-full bg-[#f5f5f5]">
+                <FaArrowLeft class="" />
+              </div>
+              <div class="w-[46px] h-[46px] flex gap-[2px] justify-center  items-center rounded-full bg-[#f5f5f5]">
+                <FaArrowRight class="" />
+              </div>
             </div>
-            <div class="w-[46px] h-[46px] flex gap-[2px] justify-center  items-center rounded-full bg-[#f5f5f5]">
-              <FaArrowRight class="" />
+          ) : (
+            <div>
+              <Button1 />
             </div>
-          </div>
+          )}
         </div>
       </div>
     </>

@@ -4,11 +4,28 @@ import { IoHeartOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
 import { TiStarFullOutline } from "react-icons/ti";
 import "../ProductCard/ProductCard.css";
+// import axios from "axios";
 
 function ProductCard() {
+  // const [product, setProduct] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get("https://dummyjson.com/products");
+  //       setProduct(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   return (
     <>
-      <div className="w-full max-w-[270px]  border-transparent rounded-lg relative ">
+      {/* {product.map((products) => ( */}
+      <div className="w-full max-w-[270px] group border-transparent rounded-lg relative ">
         <div className="p-9 w-[270px] h-[250px] bg-stone-100 rounded flex justify-center">
           <img
             class="p-5 w-[190px] height-[180px] "
@@ -28,18 +45,16 @@ function ProductCard() {
           <div className="w-[55px] p-1 absolute top-0 start-0 bg-[#DB4444] rounded m-2 ">
             <p className=" text-white "> - 40%</p>
           </div>
-          <button class="absolute w-[270px] top-[210.5px] h-10 text-base bg-[#000] text-white rounded-[4px] tracking-wider ">
+          <button class="absolute w-[270px] top-[210.5px] h-10 text-base bg-[#000] text-white rounded-[4px] tracking-wider hidden group-hover:block ">
             Add To Cart
           </button>
         </div>
 
         <div class=" pt-4 bg-white border-transparent">
-          <p class="text-base font-medium text-black tracking-wider ">
-            HAVIT HV-G92 Gamepad
-          </p>
+          <p class="text-base font-medium text-black tracking-wider ">Having</p>
           <div>
             <p className="mt-2 text-[#DB4444] text-base space-x-1">
-              $120{" "}
+              $120
               <span className="line-through text-[#000000] opacity-45 ml-[12px] ">
                 $160
               </span>
@@ -59,6 +74,7 @@ function ProductCard() {
           </div>
         </div>
       </div>
+      {/* ))} */}
     </>
   );
 }
