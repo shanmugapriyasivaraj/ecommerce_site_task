@@ -1,5 +1,5 @@
 import React from "react";
-import Blueth from "../../assets/Blueth.jpg";
+import Blueth from "../../../../assets/homeAssets/Blueth.jpg";
 
 const Banner = () => {
   return (

@@ -1,6 +1,8 @@
 import React from "react";
 import { TiStarFullOutline } from "react-icons/ti";
 import "../ProductCard/ProductCard.css";
+import { IoHeartOutline } from "react-icons/io5";
+import { BsEye } from "react-icons/bs";
 
 function ProductCard({
   offers,
@@ -23,15 +25,11 @@ function ProductCard({
           />
           <div className="absolute top-0 ml-[150px] flex items-center justify-center ">
             <div className="flex-inline-block space-x-5 ml-10">
-              {cartIcons &&
-                cartIcons.map((icon) => (
-                  <div className="bg-[#FFFFFF] mt-2 ml-[20px] rounded-full h-8 w-8 flex items-center justify-center">
-                    {/* <IoHeartOutline className="text-[#000]" /> */}{" "}
-                    <div className="text-[#000]">{icon}</div>
-                  </div>
-                ))}
+              <div className="bg-[#FFFFFF] mt-2 ml-[20px] rounded-full h-8 w-8 flex items-center justify-center">
+                <IoHeartOutline className="text-[#000]" />{" "}
+              </div>
               <div className="bg-[#fff] mt-2 rounded-full h-8 w-8 flex items-center justify-center">
-                <TiStarFullOutline className="text-[#000]" />
+                <BsEye className="text-[#000]" />
               </div>
             </div>
           </div>

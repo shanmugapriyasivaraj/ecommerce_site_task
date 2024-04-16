@@ -47,7 +47,7 @@ const Home = () => {
               <ProductCard
                 title={item.title}
                 offers={item.discountPercentage}
-                cartIcon={["PiHeadsetDuotone", "PiHeadsetDuotone"]}
+                cartIcon={[<PiHeadsetDuotone />, <PiHeadsetDuotone />]}
                 image={item.thumbnail}
                 offerPrice={item.price}
                 originalPrice={item.price * 2}
@@ -77,12 +77,21 @@ const Home = () => {
         arrow={false}
       />
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]">
-        {/* <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard /> */}
+        {product &&
+          product
+            .slice(0, 4)
+            .map((item) => (
+              <ProductCard
+                title={item.title}
+                offers={item.discountPercentage}
+                cartIcon={[<PiHeadsetDuotone />, <PiHeadsetDuotone />]}
+                image={item.thumbnail}
+                offerPrice={item.price}
+                originalPrice={item.price * 2}
+                rating={item.rating}
+                userRating={item.stock}
+              />
+            ))}
       </div>
 
       {/* banner */}
@@ -96,19 +105,38 @@ const Home = () => {
         arrow={true}
       />
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]">
-        {/* <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard /> */}
+        {product &&
+          product
+            .slice(0, 4)
+            .map((item) => (
+              <ProductCard
+                title={item.title}
+                offers={item.discountPercentage}
+                cartIcon={[<PiHeadsetDuotone />, <PiHeadsetDuotone />]}
+                image={item.thumbnail}
+                offerPrice={item.price}
+                originalPrice={item.price * 2}
+                rating={item.rating}
+                userRating={item.stock}
+              />
+            ))}
       </div>
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px] mt-[50px]">
-        {/* <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard /> */}
+        {product &&
+          product
+            .slice(0, 4)
+            .map((item) => (
+              <ProductCard
+                title={item.title}
+                offers={item.discountPercentage}
+                cartIcon={[<PiHeadsetDuotone />, <PiHeadsetDuotone />]}
+                image={item.thumbnail}
+                offerPrice={item.price}
+                originalPrice={item.price * 2}
+                rating={item.rating}
+                userRating={item.stock}
+              />
+            ))}
       </div>
       <Button />
 
@@ -120,23 +148,7 @@ const Home = () => {
         arrow={true}
       />
       <Feature />
-      <div className="flex justify-between mx-[249px] mt-[100px] ">
-        <Features
-          icon={<FaTruckFast />}
-          title={"FREE AND FAST DELIVERY"}
-          subtitle={"Free delivery for all orders over $140"}
-        />
-        <Features
-          icon={<PiHeadsetDuotone />}
-          title={"24/7 CUSTOMER SERVICE"}
-          subtitle={"Friendly 24/7 customer support"}
-        />
-        <Features
-          icon={<GoShieldCheck />}
-          title={"MONEY BACK GUARANTEE"}
-          subtitle={"We reurn money within 30 days"}
-        />
-      </div>
+      <Features />
     </div>
   );
 };

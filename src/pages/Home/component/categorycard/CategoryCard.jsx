@@ -5,7 +5,6 @@ import { BsSmartwatch } from "react-icons/bs";
 import { HiOutlineComputerDesktop } from "react-icons/hi2";
 import { CiCamera } from "react-icons/ci";
 import { TbDeviceGamepad } from "react-icons/tb";
-import Icons from "../categorycard/Icons";
 
 const CategoryCard = () => {
   const cardData = [
@@ -14,33 +13,33 @@ const CategoryCard = () => {
       cartName: "Phone",
     },
     {
-      cartIcon: <CiMobile4 />,
-      cartName: "Phone",
+      cartIcon: <HiOutlineComputerDesktop />,
+      cartName: "Computers",
     },
     {
-      cartIcon: <CiMobile4 />,
-      cartName: "Phone",
+      cartIcon: <BsSmartwatch />,
+      cartName: "SmartWatch",
     },
     {
-      cartIcon: <CiMobile4 />,
-      cartName: "Phone",
+      cartIcon: <CiCamera />,
+      cartName: "Camera",
     },
     {
-      cartIcon: <CiMobile4 />,
-      cartName: "Phone",
+      cartIcon: <CiHeadphones />,
+      cartName: "HeadPhones",
     },
     {
-      cartIcon: <CiMobile4 />,
-      cartName: "Phone",
+      cartIcon: <TbDeviceGamepad />,
+      cartName: "Gaming",
     },
   ];
   return (
     <>
-      <div class=" h-[145px] ml-[135px]">
+      <div class=" h-[145px] mx-[70px]">
         <div class="mt-[50px] flex  gap-[30px] ">
           {cardData &&
             cardData.map((data) => (
-              <div class="lg:w-[140px] lg:h-[130px]   hover:bg-[#DB4444] hover:text-[#fff] rounded border-2 border-black border-opacity-30 gap-[10px] flex flex-col justify-center items-center">
+              <div class="lg:w-[140px] lg:h-[130px] w-[170px] h-[145px]   hover:bg-[#DB4444] hover:text-[#fff] rounded border-2 border-black border-opacity-30 gap-[10px] flex flex-col justify-center items-center">
                 <div class="text-[40px] ">{data.cartIcon}</div>
                 <div class="text-[16px]  font-light">{data.cartName}</div>
               </div>
