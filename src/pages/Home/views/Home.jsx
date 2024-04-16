@@ -14,15 +14,16 @@ import { GoShieldCheck } from "react-icons/go";
 import axios from "axios";
 
 const Home = () => {
-  // const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios
-        .get("https://dummyjson.com/products")
-        .then((res) => console.log(res.data))
-        .catch((err) => console.log(err));
-      return response;
+      try {
+        const response = await axios.get("https://dummyjson.com/products");
+        setProduct(response.data.products);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
 
     fetchData();
@@ -40,18 +41,20 @@ const Home = () => {
       />
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]  ">
         {product &&
-          product.map(() => (
-            <ProductCard
-              title={""}
-              offers={""}
-              cartIcon={[]}
-              image={""}
-              offerPrice={""}
-              originalPrice={""}
-              rating={""}
-              userRating={""}
-            />
-          ))}
+          product
+            .slice(0, 4)
+            .map((item) => (
+              <ProductCard
+                title={item.title}
+                offers={item.discountPercentage}
+                cartIcon={["PiHeadsetDuotone", "PiHeadsetDuotone"]}
+                image={item.thumbnail}
+                offerPrice={item.price}
+                originalPrice={item.price * 2}
+                rating={item.rating}
+                userRating={item.stock}
+              />
+            ))}
       </div>
       <Button />
       <div className="mt-[50px] border-black opacity-[30%] border-[0.5px]"></div>
@@ -74,12 +77,12 @@ const Home = () => {
         arrow={false}
       />
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]">
+        {/* <ProductCard />
         <ProductCard />
         <ProductCard />
         <ProductCard />
         <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <ProductCard /> */}
       </div>
 
       {/* banner */}
@@ -93,19 +96,19 @@ const Home = () => {
         arrow={true}
       />
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]">
+        {/* <ProductCard />
         <ProductCard />
         <ProductCard />
         <ProductCard />
         <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <ProductCard /> */}
       </div>
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px] mt-[50px]">
+        {/* <ProductCard />
         <ProductCard />
         <ProductCard />
         <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <ProductCard /> */}
       </div>
       <Button />
 

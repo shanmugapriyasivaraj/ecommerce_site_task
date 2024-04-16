@@ -23,15 +23,16 @@ function ProductCard({
           />
           <div className="absolute top-0 ml-[150px] flex items-center justify-center ">
             <div className="flex-inline-block space-x-5 ml-10">
-              {cartIcons.map((icon) => (
-                <div className="bg-[#FFFFFF] mt-2 ml-[20px] rounded-full h-8 w-8 flex items-center justify-center">
-                  {/* <IoHeartOutline className="text-[#000]" /> */}{" "}
-                  <i className="text-[#000]">{icon}</i>
-                </div>
-              ))}
-              {/* <div className="bg-[#fff] mt-2 rounded-full h-8 w-8 flex items-center justify-center">
-                <IoEyeOutline className="text-[#000]" />
-              </div> */}
+              {cartIcons &&
+                cartIcons.map((icon) => (
+                  <div className="bg-[#FFFFFF] mt-2 ml-[20px] rounded-full h-8 w-8 flex items-center justify-center">
+                    {/* <IoHeartOutline className="text-[#000]" /> */}{" "}
+                    <div className="text-[#000]">{icon}</div>
+                  </div>
+                ))}
+              <div className="bg-[#fff] mt-2 rounded-full h-8 w-8 flex items-center justify-center">
+                <TiStarFullOutline className="text-[#000]" />
+              </div>
             </div>
           </div>
           <div className="w-[55px] p-1 absolute top-0 start-0 bg-[#DB4444] rounded m-2 ">
