@@ -85,8 +85,8 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="border mt-[16px] border-black opacity-[30%] border-b-black"></div>
       </nav>
+      <div className="border mt-[16px] border-black opacity-[30%] border-b-black"></div>
     </>
   );
 };
