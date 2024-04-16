@@ -12,4 +12,3 @@ const Icons = (props) => {
 };
 
 export default Icons;
-// w-[130px] h-[145px]

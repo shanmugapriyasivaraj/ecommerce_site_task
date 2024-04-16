@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "../component/slider/Slider";
 import Banner from "../component/banner/Banner";
 import Feature from "../component/featurecard/Feature";
@@ -11,8 +11,22 @@ import Features from "../component/features/Features";
 import { FaTruckFast } from "react-icons/fa6";
 import { PiHeadsetDuotone } from "react-icons/pi";
 import { GoShieldCheck } from "react-icons/go";
+import axios from "axios";
 
 const Home = () => {
+  // const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios
+        .get("https://dummyjson.com/products")
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err));
+      return response;
+    };
+
+    fetchData();
+  }, []);
   return (
     <div>
       <Slider />
@@ -25,12 +39,19 @@ const Home = () => {
         arrow={true}
       />
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]  ">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {product &&
+          product.map(() => (
+            <ProductCard
+              title={""}
+              offers={""}
+              cartIcon={[]}
+              image={""}
+              offerPrice={""}
+              originalPrice={""}
+              rating={""}
+              userRating={""}
+            />
+          ))}
       </div>
       <Button />
       <div className="mt-[50px] border-black opacity-[30%] border-[0.5px]"></div>
