@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <nav className="ml-[5%] bg-white mt-12 ">
+      <nav className="ml-[5%]  bg-white ">
         <div className="flex flex-wrap items-center justify-between mt-[70px] ">
           <p className="font-bold font-Inter text-[--secondary-color] text-[24px] tracking-wide">
             Exclusive

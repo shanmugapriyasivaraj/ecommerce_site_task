@@ -15,7 +15,7 @@ const CategoryHeader = (props) => {
         <div class="flex justify-between">
           <div class=" mt-[30px] flex justify-between gap-[87px]">
             <div class="text-4xl mt-[15px] font-semibold">{props.subtitle}</div>
-            {props.timer === true ? (
+            {props.timer ? (
               <div class="flex gap-[15px]">
                 <Timer time={"03"} text={"Days"} dot={true} />
                 <Timer time={"23"} text={"Hours"} dot={true} />
@@ -26,7 +26,7 @@ const CategoryHeader = (props) => {
               <div></div>
             )}
           </div>
-          {props.arrow === true ? (
+          {props.arrow ? (
             <div class="flex gap-[4px] justify-center mt-[30px] mr-[65px]">
               <div class="w-[46px] h-[46px] flex gap-[2px] justify-center items-center  rounded-full bg-[#f5f5f5]">
                 <FaArrowLeft class="" />

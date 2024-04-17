@@ -7,7 +7,7 @@ const Timer = (props) => {
         <p className="text-xs ">{props.text}</p>
         <p className=" text-4xl font-bold font-poppins">{props.time}</p>
       </div>
-      {props.dot === true ? (
+      {props.dot ? (
         <div className="text-3xl mt-[13px] font-bold decoration-solid text-[#db4444] ">
           :
         </div>

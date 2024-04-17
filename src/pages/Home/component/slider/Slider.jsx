@@ -24,7 +24,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full ">
       <img
         className="h-[344px] w-[90%] mt-[20px] mb-[20px] m-auto"
         src={slides[currentSlide]}
@@ -36,7 +36,7 @@ const Slider = () => {
           <button
             key={index}
             className={`w-4 h-4 rounded-full focus:outline-none ${
-              index === currentSlide ? 'bg-gray-800' : 'bg-gray-400'
+              index === currentSlide ? "bg-gray-800" : "bg-gray-400"
             }`}
             onClick={() => goToSlide(index)}
           ></button>
