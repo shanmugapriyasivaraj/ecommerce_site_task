@@ -1,4 +1,5 @@
 import React from "react";
+
 import Timer from "../cardHeader/Timer";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
