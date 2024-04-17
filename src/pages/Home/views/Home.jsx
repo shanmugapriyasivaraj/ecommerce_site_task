@@ -5,6 +5,7 @@ import Feature from "../component/featurecard/Feature";
 import CardHeader from "../../Home/component/cardHeader/CardHeader";
 import ProductCard from "../component/ProductCard/ProductCard";
 import CategoryCard from "../../Home/component/categorycard/CategoryCard";
+
 import Button from "../component/buttons/Button";
 
 import Features from "../component/features/Features";
