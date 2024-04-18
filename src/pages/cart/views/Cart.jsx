@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
-import Button from "../../../comman/components/Button";
+import Button from "../../../common/components/Button";
 import axios from "axios";
 import CustomInput from "../../../common/components/CustomInput";
 
@@ -22,7 +22,7 @@ const Cart = () => {
   }, []);
   return (
     <>
-      <div class=" h-[21px] mt-[50px] ml-[65px]">
+      <div class=" h-[21px] mt-[210px] ml-[65px]">
         <p class="text-sm font-poppins">
           <span class="text-gray-500 opacity-50 mr-2">Home</span>
           <a> / Cart</a>
@@ -94,7 +94,7 @@ const Cart = () => {
           </div>
         </div>
         <div class="mt-[50px] ml-[65px] mb-[70px] flex justify-between">
-          <div>
+          <div class="flex gap-[15px]">
             <CustomInput
               width={300}
               height={56}
@@ -105,8 +105,18 @@ const Cart = () => {
                 val.target.value;
               }}
             />
+            <div class="mt-2">
+              {" "}
+              <Button
+                width={211}
+                height={56}
+                bg={true}
+                textColor={true}
+                heading={"Apply Coupens"}
+              />
+            </div>
           </div>
-          <div class="w-[470px] h-[320px] border-2 border-black rounded mr-[65px] font-poppins">
+          <div class="w-[460px] h-[320px] mt-2 border-2 border-black rounded mr-[65px] font-poppins">
             <p class=" text-xl font-medium mt-10 ml-10">Cart Total</p>
             <div class="flex mt-6 ml-10 gap-[290px]">
               <p clas="text-base font-normal">Subtotal:</p>

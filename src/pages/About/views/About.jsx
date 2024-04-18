@@ -1,10 +1,11 @@
 import React from "react";
-import Checkout from "../../checkout/views/Checkout";
+
+import Cart from "../../cart/views/Cart";
 
 const About = () => {
   return (
     <>
-      <Checkout />
+      <Cart />
     </>
   );
 };
