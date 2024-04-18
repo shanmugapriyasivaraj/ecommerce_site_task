@@ -3,6 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import Button from "../../../comman/components/Button";
 import axios from "axios";
+import CustomInput from "../../../common/components/CustomInput";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -93,7 +94,18 @@ const Cart = () => {
           </div>
         </div>
         <div class="mt-[50px] ml-[65px] mb-[70px] flex justify-between">
-          <div>coupens</div>
+          <div>
+            <CustomInput
+              width={300}
+              height={56}
+              bgColor={"#fff"}
+              isFocused={true}
+              placeholder={"Coupen Code"}
+              value={(val) => {
+                val.target.value;
+              }}
+            />
+          </div>
           <div class="w-[470px] h-[320px] border-2 border-black rounded mr-[65px] font-poppins">
             <p class=" text-xl font-medium mt-10 ml-10">Cart Total</p>
             <div class="flex mt-6 ml-10 gap-[290px]">
