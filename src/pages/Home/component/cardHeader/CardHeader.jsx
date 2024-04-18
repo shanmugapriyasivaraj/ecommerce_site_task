@@ -1,8 +1,9 @@
 import React from "react";
+
 import Timer from "../cardHeader/Timer";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
-import Button1 from "../buttons/Button1";
+import Button from "../../../../comman/components/Button";
 
 const CategoryHeader = (props) => {
   return (
@@ -36,8 +37,14 @@ const CategoryHeader = (props) => {
               </div>
             </div>
           ) : (
-            <div>
-              <Button1 />
+            <div class="mr-[65px]">
+              <Button
+                width={159}
+                height={56}
+                bg={true}
+                textColor={true}
+                heading={"View All"}
+              />
             </div>
           )}
         </div>
