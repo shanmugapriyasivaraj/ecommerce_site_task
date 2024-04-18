@@ -5,7 +5,7 @@ import Cart from "../../cart/views/Cart";
 const About = () => {
   return (
     <>
-      <Cart />
+      <div>about</div>
     </>
   );
 };

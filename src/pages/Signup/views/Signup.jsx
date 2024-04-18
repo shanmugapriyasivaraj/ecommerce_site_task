@@ -1,8 +1,11 @@
 import React from "react";
-import Error from "../../Error/views/Error";
 
 const Signup = () => {
-  return <>signup</>;
+  return (
+    <>
+      <div>signup</div>
+    </>
+  );
 };
 
 export default Signup;
