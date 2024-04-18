@@ -12,9 +12,8 @@ const Button = ({ width, height, bg, textColor, heading }) => {
           color: textColor ? "#ffffff" : "#000000",
           border: `1px solid ${borderColor}`,
           borderRadius: "4px",
-
           fontSize: "16px",
-          fontWeight: "500",
+          fontWeight: 500,
         }}
       >
         {heading}

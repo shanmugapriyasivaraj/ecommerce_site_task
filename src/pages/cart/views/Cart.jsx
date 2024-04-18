@@ -92,25 +92,25 @@ const Cart = () => {
             />
           </div>
         </div>
-        <div class="mt-[50px] ml-[65px] flex justify-between">
+        <div class="mt-[50px] ml-[65px] mb-[70px] flex justify-between">
           <div>coupens</div>
-          <div class="w-[470px] h-[320px] border-2 mr-[65px] font-poppins">
+          <div class="w-[470px] h-[320px] border-2 border-black rounded mr-[65px] font-poppins">
             <p class=" text-xl font-medium mt-10 ml-10">Cart Total</p>
-            <div class="flex mt-6 ml-10 gap-[260px]">
+            <div class="flex mt-6 ml-10 gap-[290px]">
               <p clas="text-base font-normal">Subtotal:</p>
               <p>$1750</p>
             </div>
             <div class="mt-4 border-b-2 border-solid text-gray-500 w-[422px] m-auto"></div>
-            <div class="flex mt-4 ml-10 gap-[260px]">
+            <div class="flex mt-4 ml-10 gap-[290px]">
               <p clas="text-base font-normal">Shipping:</p>
               <p>Free</p>
             </div>
             <div class="mt-4 border-b-2 border-solid text-gray-500 w-[422px] m-auto"></div>
-            <div class="flex mt-4 ml-10 gap-[290px]">
+            <div class="flex mt-4 ml-10 gap-[318px]">
               <p clas="text-base font-normal">Total:</p>
               <p>$1750</p>
             </div>
-            <div class="flex justify-center mt-3">
+            <div class="flex justify-center mb-2">
               <Button
                 width={260}
                 height={56}

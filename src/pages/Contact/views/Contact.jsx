@@ -11,7 +11,7 @@ const Contact = () => {
           <a>/ Contact</a>
         </p>
       </div>
-      <div class="w-[340px] h-[457px] ml-[65px] mt-[70px] rounded borded shadow">
+      <div class="w-[340px] h-[400px] ml-[65px] mt-[70px] mb-[100px] rounded borded shadow">
         <div class="h-[366px] p-11">
           <div class="flex items-center gap-5">
             <div className="bg-[#DB4444] rounded-full h-9 w-9 flex items-center justify-center">

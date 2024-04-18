@@ -10,14 +10,14 @@ const Error = () => {
           <a>/ 404 Error</a>
         </p>
       </div>
-      <div>
+      <div class="mb-[100px]">
         <div class="h-[179px] mt-[200px] flex flex-col justify-center items-center gap-8">
           <p class="text-8xl font-medium ">404 Not Found</p>
           <p class="text-base font-normal">
             Your visited page not found. You may go home page.
           </p>
         </div>
-        <div class="mt-[90px] flex justify-center">
+        <div class="mt-[60px] flex justify-center">
           <Button
             width={254}
             height={56}
