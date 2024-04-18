@@ -5,7 +5,7 @@ import { CiMail } from "react-icons/ci";
 const Contact = () => {
   return (
     <>
-      <div class="h-[21px] mt-[50px] ml-[65px]">
+      <div class="h-[21px] mt-[210px]  ml-[65px]">
         <p class="text-sm font-poppins">
           <span class="text-gray-500 opacity-50 mr-2">Home</span>
           <a>/ Contact</a>

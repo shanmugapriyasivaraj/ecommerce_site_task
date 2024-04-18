@@ -6,7 +6,7 @@ import CardHeader from "../../Home/component/cardHeader/CardHeader";
 import ProductCard from "../component/ProductCard/ProductCard";
 import CategoryCard from "../../Home/component/categorycard/CategoryCard";
 
-import Button from "../../../comman/components/Button";
+import Button from "../../../common/components/Button";
 
 import Features from "../component/features/Features";
 import { PiHeadsetDuotone } from "react-icons/pi";
