@@ -6,12 +6,10 @@ import CardHeader from "../../Home/component/cardHeader/CardHeader";
 import ProductCard from "../component/ProductCard/ProductCard";
 import CategoryCard from "../../Home/component/categorycard/CategoryCard";
 
-import Button from "../../../comman/components/Button";
+import Button from "../../../common/components/Button";
 
 import Features from "../component/features/Features";
-import { FaTruckFast } from "react-icons/fa6";
 import { PiHeadsetDuotone } from "react-icons/pi";
-import { GoShieldCheck } from "react-icons/go";
 import axios from "axios";
 
 const Home = () => {
@@ -30,8 +28,7 @@ const Home = () => {
     fetchData();
   }, []);
   return (
-    <div>
-      {/*slider  */}
+    <div className="mt-[160px]">
       <Slider />
 
       {/* flash card header and card */}

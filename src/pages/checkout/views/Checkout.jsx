@@ -6,6 +6,7 @@ import Img2 from "../../../assets/checkoutAssets/checkout2.png";
 import Img3 from "../../../assets/checkoutAssets/checkout3.png";
 import Img4 from "../../../assets/checkoutAssets/checkout4.png";
 import CustomInput from "../../../common/components/CustomInput";
+import Button from "../../../common/components/Button";
 
 // import CustomInput from "../../../common/components/CustomInput";
 const Checkout = () => {
@@ -122,7 +123,7 @@ const Checkout = () => {
               Cash on delivery
             </label>
           </div>
-          <div className="flex mt-4">
+          <div className="flex mt-4 gap-3">
             {" "}
             <CustomInput
               width={300}
@@ -133,6 +134,26 @@ const Checkout = () => {
               value={(val) => {
                 val.target.value;
               }}
+            />
+            <div className="mt-2">
+              {" "}
+              <Button
+                height={56}
+                width={211}
+                bg={true}
+                textColor={true}
+                heading={"Apply Coupen"}
+              />
+            </div>
+          </div>
+          <div className="mt-6">
+            {" "}
+            <Button
+              height={56}
+              width={190}
+              bg={true}
+              textColor={true}
+              heading={"Place Order"}
             />
           </div>
         </div>
