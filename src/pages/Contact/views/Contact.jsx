@@ -1,7 +1,12 @@
 import React from "react";
+import Checkout from "../../checkout/views/Checkout";
 
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+    <>
+      <Checkout />
+    </>
+  );
 };
 
 export default Contact;
