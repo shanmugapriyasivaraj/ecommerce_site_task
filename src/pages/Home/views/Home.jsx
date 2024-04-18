@@ -8,9 +8,7 @@ import CategoryCard from "../../Home/component/categorycard/CategoryCard";
 import Button from "../component/buttons/Button";
 
 import Features from "../component/features/Features";
-import { FaTruckFast } from "react-icons/fa6";
 import { PiHeadsetDuotone } from "react-icons/pi";
-import { GoShieldCheck } from "react-icons/go";
 import axios from "axios";
 
 const Home = () => {
@@ -29,7 +27,7 @@ const Home = () => {
     fetchData();
   }, []);
   return (
-    <div>
+    <div className="mt-[160px]">
       <Slider />
 
       {/* flash card header and card */}
