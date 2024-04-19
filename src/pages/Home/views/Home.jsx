@@ -5,12 +5,11 @@ import Feature from "../component/featurecard/Feature";
 import CardHeader from "../../Home/component/cardHeader/CardHeader";
 import ProductCard from "../component/ProductCard/ProductCard";
 import CategoryCard from "../../Home/component/categorycard/CategoryCard";
-import Button from "../component/buttons/Button";
+
+import Button from "../../../common/components/Button";
 
 import Features from "../component/features/Features";
-import { FaTruckFast } from "react-icons/fa6";
 import { PiHeadsetDuotone } from "react-icons/pi";
-import { GoShieldCheck } from "react-icons/go";
 import axios from "axios";
 
 const Home = () => {
@@ -29,7 +28,7 @@ const Home = () => {
     fetchData();
   }, []);
   return (
-    <div>
+    <div className="mt-[160px]">
       <Slider />
 
       {/* flash card header and card */}
@@ -42,7 +41,7 @@ const Home = () => {
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]  ">
         {product &&
           product
-            .slice(0, 4)
+            .slice(0, 5)
             .map((item) => (
               <ProductCard
                 title={item.title}
@@ -56,7 +55,17 @@ const Home = () => {
               />
             ))}
       </div>
-      <Button />
+
+      {/* {button} */}
+      <div class="flex justify-center items-center mt-[50px]">
+        <Button
+          width={234}
+          height={56}
+          bg={true}
+          textColor={true}
+          heading={"View All Products"}
+        />
+      </div>
       <div className="mt-[50px] border-black opacity-[30%] border-[0.5px]"></div>
 
       {/* category card and header */}
@@ -79,7 +88,7 @@ const Home = () => {
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]">
         {product &&
           product
-            .slice(0, 4)
+            .slice(0, 5)
             .map((item) => (
               <ProductCard
                 title={item.title}
@@ -107,7 +116,7 @@ const Home = () => {
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]">
         {product &&
           product
-            .slice(0, 4)
+            .slice(0, 5)
             .map((item) => (
               <ProductCard
                 title={item.title}
@@ -124,7 +133,7 @@ const Home = () => {
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px] mt-[50px]">
         {product &&
           product
-            .slice(0, 4)
+            .slice(0, 5)
             .map((item) => (
               <ProductCard
                 title={item.title}
@@ -138,7 +147,17 @@ const Home = () => {
               />
             ))}
       </div>
-      <Button />
+
+      {/* {button} */}
+      <div class="flex justify-center items-center mt-[50px]">
+        <Button
+          width={234}
+          height={56}
+          bg={true}
+          textColor={true}
+          heading={"View All Products"}
+        />
+      </div>
 
       {/* new arrival header */}
       <CardHeader

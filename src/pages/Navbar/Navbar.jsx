@@ -8,8 +8,8 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <nav className="ml-[5%]  bg-white ">
-        <div className="flex flex-wrap items-center justify-between mt-[70px] ">
+      <nav className=" bg-white shadow-lg fixed top-0 left-0 w-full z-10">
+        <div className=" ml-[5%] flex flex-wrap items-center justify-between mt-[70px] ">
           <p className="font-bold font-Inter text-[--secondary-color] text-[24px] tracking-wide">
             Exclusive
           </p>
@@ -74,19 +74,11 @@ const Navbar = () => {
                   Sign Up
                 </NavLink>
               </li>
-              {/* <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Contact
-                </a>
-              </li> */}
             </ul>
           </div>
         </div>
+        <div className="border mt-[16px] border-black opacity-[30%] border-b-black"></div>
       </nav>
-      <div className="border mt-[16px] border-black opacity-[30%] border-b-black"></div>
     </>
   );
 };

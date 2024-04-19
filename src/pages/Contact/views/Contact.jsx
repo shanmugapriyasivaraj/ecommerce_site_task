@@ -1,11 +1,7 @@
 import React from "react";
-import ProductDetails from "../../productDetails/component/ProductDetails";
+
 const Contact = () => {
-  return (
-  <>
-  <ProductDetails/>
-  </>
-  );
+  return <div>Contact</div>;
 };
 
 export default Contact;

@@ -1,7 +1,13 @@
 import React from "react";
 
+import Cart from "../../cart/views/Cart";
+
 const About = () => {
-  return <div>About</div>;
+  return (
+    <>
+      <div>about</div>
+    </>
+  );
 };
 
 export default About;
