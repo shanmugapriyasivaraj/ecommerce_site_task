@@ -1,6 +1,5 @@
 import React from "react";
 
-import Cart from "../../cart/views/Cart";
 import AboutImg from "../../../assets/aboutAssets/about1.jpg";
 import { AiOutlineShop } from "react-icons/ai";
 import { AiOutlineDollarCircle } from "react-icons/ai";
