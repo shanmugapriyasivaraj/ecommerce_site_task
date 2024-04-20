@@ -32,15 +32,7 @@ const CustomInput = ({
 
       <input
         value={value}
-        placeholder={`${placeholder} ${
-          required ? (
-            <span className="text-[16px] font-normal opacity-40 text-red-500">
-              *
-            </span>
-          ) : (
-            <div></div>
-          )
-        }`}
+        placeholder={`${placeholder}${required ? "*" : ""}`}
         style={{
           width: `${width}px`,
           height: `${height}px`,
