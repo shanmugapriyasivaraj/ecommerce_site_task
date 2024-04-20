@@ -149,31 +149,3 @@ const Cart = () => {
 };
 
 export default Cart;
-{
-  /* <div class="h-[432px] mt-[50px] ml-[65px] mr-[65px] flex flex-col gap-14">
-          <div class="justify-center items-center flex gap-[270px] h-[72px] rounded borded shadow">
-            <p class="text-base font-normal text-[rgba(0, 0, 0, 1)]">Product</p>
-            <p>Price</p>
-            <p>Quantity</p>
-            <p>Subtotal</p>
-          </div>
-          {cart &&
-            cart.slice(0, 2).map((e) => (
-              <div class="justify-center items-center gap-[240px] flex h-[102px] rounded borded shadow">
-                <div class="flex gap-[20px] items-center">
-                  <img class="w-[56px] h-[56px]" src={e.thumbnail} />
-                  <p>{e.title}</p>
-                </div>
-                <div>{e.price}</div>
-                <div class="flex gap-[10px] items-center justify-center w-[72px] h-[44px] rounded border-2 border-black]">
-                  01
-                  <div>
-                    <IoIosArrowUp />
-                    <IoIosArrowDown />
-                  </div>
-                </div>
-                <div>hhi</div>
-              </div>
-            ))}
-        </div> */
-}

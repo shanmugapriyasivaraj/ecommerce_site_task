@@ -11,6 +11,7 @@ const CustomInput = ({
   bgColor,
   value,
   border,
+  placeholderRequired,
 }) => {
   return (
     <div className="flex flex-col gap-2 ">
@@ -32,7 +33,7 @@ const CustomInput = ({
 
       <input
         value={value}
-        placeholder={placeholder}
+        placeholder={`${placeholder}${placeholderRequired ? "*" : ""}`}
         style={{
           width: `${width}px`,
           height: `${height}px`,

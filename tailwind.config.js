@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: { display: "group-hover" },
     fontFamily: {
-      poppins: ["Poppins", "sans-serif"],
+      sans: ["Poppins", "sans-serif"],
     },
   },
   plugins: [],

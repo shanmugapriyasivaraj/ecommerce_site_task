@@ -27,7 +27,7 @@ const Checkout = () => {
   }, []);
 
   return (
-    <div className="mt-20 mx-[135px]">
+    <div className="mt-[240px] mb-8 mx-[135px]">
       <div className="flex gap-[200px]">
         <div className="">
           {" "}
