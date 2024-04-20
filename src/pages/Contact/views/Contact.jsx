@@ -51,7 +51,7 @@ const Contact = () => {
               height={50}
               border={1}
               bgColor={"#F5F5F5"}
-              required={true}
+              placeholderRequired={true}
             />
           </div>
         </div>
