@@ -21,7 +21,7 @@ const ProductDetailsPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-[160px]">
       <ProductDetails />
       <div className="mt-[100px]">
         <CategoryHeader title={"Related Items"} btn={false} arrow={false} />
