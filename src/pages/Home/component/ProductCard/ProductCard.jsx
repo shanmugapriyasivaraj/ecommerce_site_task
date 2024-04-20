@@ -34,7 +34,7 @@ function ProductCard({
             </div>
           </div>
           <div className="w-[55px] p-1 absolute top-0 start-0 bg-[#DB4444] rounded m-2 ">
-            <p className=" text-white "> {offers}</p>
+            <p className=" text-white "> {offers}%</p>
           </div>
           <button class="absolute w-[270px] top-[210.5px] h-10 text-base bg-[#000] text-white rounded-[4px] tracking-wider hidden group-hover:block ">
             Add To Cart

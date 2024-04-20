@@ -2,7 +2,7 @@ import React from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 //Components - >
 const Navbar = () => {
@@ -27,9 +27,9 @@ const Navbar = () => {
                 <p className="text-[24px]">
                   <IoMdHeartEmpty />
                 </p>
-                <p className="text-[24px]">
+                <Link to={"/cart"} className="text-[24px]">
                   <IoCartOutline />
-                </p>
+                </Link>
               </div>
             </div>
           </div>

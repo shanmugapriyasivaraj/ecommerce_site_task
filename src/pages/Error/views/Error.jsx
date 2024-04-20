@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../../common/components/Button";
+import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
@@ -18,13 +19,15 @@ const Error = () => {
           </p>
         </div>
         <div class="mt-[60px] flex justify-center">
-          <Button
-            width={254}
-            height={56}
-            bg={true}
-            textColor={true}
-            heading={"Back to Home Page"}
-          />
+          <Link to="/">
+            <Button
+              width={254}
+              height={56}
+              bg={true}
+              textColor={true}
+              heading={"Back to Home Page"}
+            />
+          </Link>
         </div>
       </div>
     </>

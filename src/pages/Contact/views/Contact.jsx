@@ -2,6 +2,7 @@ import React from "react";
 import { FiPhone } from "react-icons/fi";
 import { CiMail } from "react-icons/ci";
 import CustomInput from "../../../common/components/CustomInput";
+import Button from "../../../common/components/Button";
 
 const Contact = () => {
   return (
@@ -13,8 +14,8 @@ const Contact = () => {
         </p>
       </div>
       <div class="flex">
-        <div class="w-[340px] h-[400px] ml-[65px] mt-[70px] mb-[100px] rounded borded shadow">
-          <div class="h-[366px] p-11">
+        <div class="w-[340px] h-[450px] ml-[65px] mt-[70px] mb-[100px] rounded borded shadow">
+          <div class="h-[445px] p-11">
             <div class="flex items-center gap-5">
               <div className="bg-[#DB4444] rounded-full h-9 w-9 flex items-center justify-center">
                 <FiPhone className="text-[#fff]" />{" "}
@@ -43,16 +44,52 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        <div class="w-[640px] h-[400px] ml-[65px] mt-[70px] mb-[100px] rounded borded shadow">
-          <div>
+        <div class="w-[650px] h-[450px] ml-[65px] mt-[70px] mb-[100px] flex-col rounded borded shadow">
+          <div class="h-[445px] p-6 flex flex-col gap-10 ">
+            <div class="flex gap-2">
+              <CustomInput
+                placeholder="Your Name"
+                width={200}
+                height={50}
+                border={1}
+                bgColor={"#F5F5F5"}
+                placeholderRequired={true}
+              />
+              <CustomInput
+                placeholder="Your Email"
+                width={200}
+                height={50}
+                border={1}
+                bgColor={"#F5F5F5"}
+                placeholderRequired={true}
+              />
+              <CustomInput
+                placeholder="Your Phone"
+                width={200}
+                height={50}
+                border={1}
+                bgColor={"#F5F5F5"}
+                placeholderRequired={true}
+              />
+            </div>
+
             <CustomInput
-              placeholder="Your Name"
-              width={235}
-              height={50}
+              placeholder="Your Message"
+              width={610}
+              height={200}
               border={1}
               bgColor={"#F5F5F5"}
               placeholderRequired={true}
             />
+            <div class="ml-[400px]">
+              <Button
+                width={211}
+                height={56}
+                bg={true}
+                textColor={true}
+                heading={"Send Message"}
+              />
+            </div>
           </div>
         </div>
       </div>
