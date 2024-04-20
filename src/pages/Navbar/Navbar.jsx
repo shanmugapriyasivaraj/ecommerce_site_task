@@ -2,7 +2,7 @@ import React from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 //Components - >
 const Navbar = () => {
@@ -24,9 +24,9 @@ const Navbar = () => {
             </div>
             <div>
               <div className="flex gap-[16px] ">
-                <p className="text-[24px]">
+                <Link to={"/wishlist"} className="text-[24px]">
                   <IoMdHeartEmpty />
-                </p>
+                </Link>
                 <p className="text-[24px]">
                   <IoCartOutline />
                 </p>

@@ -3,6 +3,8 @@ import { TiStarFullOutline } from "react-icons/ti";
 import "../ProductCard/ProductCard.css";
 import { IoHeartOutline } from "react-icons/io5";
 import { BsEye } from "react-icons/bs";
+import { IoTrashOutline } from "react-icons/io5";
+import { IoCartOutline } from "react-icons/io5";
 
 function ProductCard({
   offers,
@@ -13,6 +15,10 @@ function ProductCard({
   originalPrice,
   rating,
   userRating,
+  isDelete,
+  isEye,
+  isRating,
+  isCartIcon,
 }) {
   return (
     <>
@@ -23,22 +29,58 @@ function ProductCard({
             src={image}
             alt="product image"
           />
-          <div className="absolute top-0 ml-[150px] flex items-center justify-center ">
-            <div className="flex-inline-block space-x-5 ml-10">
-              <div className="bg-[#FFFFFF] mt-2 ml-[20px] rounded-full h-8 w-8 flex items-center justify-center">
-                <IoHeartOutline className="text-[#000]" />{" "}
-              </div>
-              <div className="bg-[#fff] mt-2 rounded-full h-8 w-8 flex items-center justify-center">
-                <BsEye className="text-[#000]" />
+          {cartIcons ? (
+            <div className="absolute top-0 ml-[150px] flex items-center justify-center ">
+              <div className="flex-inline-block space-x-5 ml-10">
+                <div className="bg-[#FFFFFF] mt-2 ml-[20px] rounded-full h-8 w-8 flex items-center justify-center">
+                  <IoHeartOutline className="text-[#000]" />{" "}
+                </div>
+                <div className="bg-[#fff] mt-2 rounded-full h-8 w-8 flex items-center justify-center">
+                  <BsEye className="text-[#000]" />
+                </div>
               </div>
             </div>
-          </div>
+          ) : isDelete ? (
+            <div className="absolute top-0 ml-[150px] flex items-center justify-center ">
+              <div className="flex-inline-block space-x-5 ml-10">
+                <div className="bg-[#FFFFFF] mt-2 ml-[20px] rounded-full h-8 w-8 flex items-center justify-center">
+                  <IoTrashOutline className="text-[#000]" />{" "}
+                </div>
+                {/* <div className="bg-[#fff] mt-2 rounded-full h-8 w-8 flex items-center justify-center">
+                <BsEye className="text-[#000]" />
+              </div> */}
+              </div>
+            </div>
+          ) : isEye ? (
+            <div className="absolute top-0 ml-[150px] flex items-center justify-center ">
+              <div className="flex-inline-block space-x-5 ml-10">
+                {/* <div className="bg-[#FFFFFF] mt-2 ml-[20px] rounded-full h-8 w-8 flex items-center justify-center">
+                  <IoHeartOutline className="text-[#000]" />{" "}
+                </div> */}
+                <div className="bg-[#fff] mt-2 rounded-full h-8 w-8 flex items-center justify-center">
+                  <BsEye className="text-[#000]" />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div></div>
+          )}
+
           <div className="w-[55px] p-1 absolute top-0 start-0 bg-[#DB4444] rounded m-2 ">
             <p className=" text-white "> {offers}</p>
           </div>
-          <button class="absolute w-[270px] top-[210.5px] h-10 text-base bg-[#000] text-white rounded-[4px] tracking-wider hidden group-hover:block ">
-            Add To Cart
-          </button>
+          {isCartIcon ? (
+            <div class="absolute w-[270px] top-[210.5px] h-10 text-base bg-[#000] text-white rounded-[4px] tracking-wider flex max-md:hidden  ">
+              <IoCartOutline className="mr-2 mt-[11px] ml-[60px]" />
+              <button className="hover:bg-transparent hover:text-white ml-[3px]">
+                Add To Cart
+              </button>
+            </div>
+          ) : (
+            <button class="absolute w-[270px] top-[210.5px] h-10 text-base bg-[#000] text-white rounded-[4px] tracking-wider hidden group-hover:block ">
+              Add To Cart
+            </button>
+          )}
         </div>
 
         <div class=" pt-4 bg-white border-transparent">
@@ -53,18 +95,22 @@ function ProductCard({
               </span>
             </p>
           </div>
-          <div className="flex space-x-0.5 mt-2 ">
-            <TiStarFullOutline className="text-[#FFAD33]" />
-            <TiStarFullOutline className="text-[#FFAD33]" />
-            <TiStarFullOutline className="text-[#FFAD33]" />
-            <TiStarFullOutline className="text-[#FFAD33]" />
-            <TiStarFullOutline className="text-[#FFAD33]" />
-            <div className="space-x-1">
-              <p className="text-sm font-semibold opacity-45 ml-[10px] ">
-                ({userRating})
-              </p>
+          {isRating ? (
+            <div className="flex space-x-0.5 mt-2  ">
+              <TiStarFullOutline className="text-[#FFAD33]" />
+              <TiStarFullOutline className="text-[#FFAD33]" />
+              <TiStarFullOutline className="text-[#FFAD33]" />
+              <TiStarFullOutline className="text-[#FFAD33]" />
+              <TiStarFullOutline className="text-[#FFAD33]" />
+              <div className="space-x-1">
+                <p className="text-sm font-semibold opacity-45 ml-[10px] ">
+                  ({userRating})
+                </p>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     </>

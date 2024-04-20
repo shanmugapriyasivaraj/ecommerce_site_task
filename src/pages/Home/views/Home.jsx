@@ -46,12 +46,13 @@ const Home = () => {
               <ProductCard
                 title={item.title}
                 offers={item.discountPercentage}
-                cartIcon={[<PiHeadsetDuotone />, <PiHeadsetDuotone />]}
+                cartIcons={true}
                 image={item.thumbnail}
                 offerPrice={item.price}
                 originalPrice={item.price * 2}
                 rating={item.rating}
                 userRating={item.stock}
+                isRating={true}
               />
             ))}
       </div>
@@ -93,12 +94,13 @@ const Home = () => {
               <ProductCard
                 title={item.title}
                 offers={item.discountPercentage}
-                cartIcon={[<PiHeadsetDuotone />, <PiHeadsetDuotone />]}
+                cartIcons={true}
                 image={item.thumbnail}
                 offerPrice={item.price}
                 originalPrice={item.price * 2}
                 rating={item.rating}
                 userRating={item.stock}
+                isRating={true}
               />
             ))}
       </div>
@@ -121,12 +123,13 @@ const Home = () => {
               <ProductCard
                 title={item.title}
                 offers={item.discountPercentage}
-                cartIcon={[<PiHeadsetDuotone />, <PiHeadsetDuotone />]}
+                cartIcons={true}
                 image={item.thumbnail}
                 offerPrice={item.price}
                 originalPrice={item.price * 2}
                 rating={item.rating}
                 userRating={item.stock}
+                isRating={true}
               />
             ))}
       </div>
@@ -138,12 +141,13 @@ const Home = () => {
               <ProductCard
                 title={item.title}
                 offers={item.discountPercentage}
-                cartIcon={[<PiHeadsetDuotone />, <PiHeadsetDuotone />]}
+                cartIcons={true}
                 image={item.thumbnail}
                 offerPrice={item.price}
                 originalPrice={item.price * 2}
                 rating={item.rating}
                 userRating={item.stock}
+                isRating={true}
               />
             ))}
       </div>

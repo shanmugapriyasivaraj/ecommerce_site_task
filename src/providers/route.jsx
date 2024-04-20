@@ -1,4 +1,5 @@
 import React from "react";
+import Wishlist from "../pages/Wishlist/views/Wishlist";
 const BaseLayout = React.lazy(() => import("../pages/BaseLayout"));
 const Home = React.lazy(() => import("../pages/Home/views/Home"));
 const About = React.lazy(() => import("../pages/About/views/About"));
@@ -25,6 +26,10 @@ const route = [
       {
         path: "/signup",
         element: <SignUp />,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist />,
       },
     ],
   },
