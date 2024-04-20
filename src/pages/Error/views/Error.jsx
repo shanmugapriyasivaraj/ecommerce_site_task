@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../../comman/components/Button";
+import Button from "../../../common/components/Button";
 
 const Error = () => {
   return (
