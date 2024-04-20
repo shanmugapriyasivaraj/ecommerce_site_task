@@ -9,10 +9,16 @@ import { FaCircle } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FaTruckFast } from "react-icons/fa6";
 import { HiArrowPath } from "react-icons/hi2";
+import Button from "../../../common/components/Button";
 
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(2);
   const [selectedSize, setSelectedSize] = useState("M");
+  const [selectedMod, setSelectedMod] = useState(Fullmod); // Default to full mod image
+
+  const handleModSelection = (mod) => {
+    setSelectedMod(mod);
+  };
 
   const handleSizeSelection = (size) => {
     setSelectedSize(size);
@@ -36,38 +42,42 @@ const ProductDetails = () => {
         <div>
           <div>
             <img
-              class="h-[138px] w-[140px] mt-[60px] ml-[78px] "
+              className="h-[138px] w-[140px] mt-[60px] ml-[78px]"
               src={Mod1}
               alt="nothing"
+              onClick={() => handleModSelection(Mod1)}
             />
           </div>
           <div>
             <img
-              class="h-[138px] w-[140px] mt-[23px] ml-[78px] "
+              className="h-[138px] w-[140px] mt-[23px] ml-[78px]"
               src={Mod2}
               alt="nothing"
+              onClick={() => handleModSelection(Mod2)}
             />
           </div>
           <div>
             <img
-              class="h-[138px] w-[140px] mt-[23px] ml-[78px] "
+              className="h-[138px] w-[140px] mt-[23px] ml-[78px]"
               src={Mod3}
               alt="nothing"
+              onClick={() => handleModSelection(Mod3)}
             />
           </div>
           <div>
             <img
-              class="h-[138px] w-[140px] mt-[23px] ml-[78px] "
+              className="h-[138px] w-[140px] mt-[23px] ml-[78px]"
               src={Mod4}
               alt="nothing"
+              onClick={() => handleModSelection(Mod4)}
             />
           </div>
         </div>
         <div>
           <div>
             <img
-              class="h-[620px] w-[600px] mt-[60px] ml-[78px] "
-              src={Fullmod}
+              className="h-[620px] w-[600px] mt-[60px] ml-[78px]"
+              src={selectedMod}
               alt="nothing"
             />
           </div>
@@ -138,9 +148,17 @@ const ProductDetails = () => {
                 +
               </div>
             </div>
-            <div className="h-[42px] w-[140px] border border-black border-opacity-25 rounded flex items-center justify-center text-[20px] font-sans">
+            <Button
+              height={42}
+              width={140}
+              bg={true}
+              textColor={true}
+              heading={"Buy Now"}
+              isBorder={false}
+            />
+            {/* <div className="h-[42px] w-[140px] border border-black border-opacity-25 rounded flex items-center justify-center text-[20px] font-sans">
               Buy Now
-            </div>
+            </div> */}
             <div className="h-[42px] w-[40px] border border-black border-opacity-25 rounded flex items-center justify-center">
               <FaRegHeart />
             </div>

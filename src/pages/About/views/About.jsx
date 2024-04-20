@@ -56,7 +56,7 @@ const About = () => {
   ];
   return (
     <>
-      <div className="mt-[240px] mb-8 ml-[135px]">
+      <div className="mt-[240px] mb-8 ml-[5%]">
         <div className="flex gap-[200px] ">
           <div className="text-[14px] flex ">
             <p className="opacity-50">Home</p>

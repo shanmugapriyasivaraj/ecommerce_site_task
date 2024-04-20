@@ -37,6 +37,9 @@ const CategoryHeader = (props) => {
               </div>
             </div>
           ) : (
+            <div></div>
+          )}
+          {props.btn ? (
             <div class="mr-[65px]">
               <Button
                 width={159}
@@ -46,6 +49,8 @@ const CategoryHeader = (props) => {
                 heading={"View All"}
               />
             </div>
+          ) : (
+            <div></div>
           )}
         </div>
       </div>

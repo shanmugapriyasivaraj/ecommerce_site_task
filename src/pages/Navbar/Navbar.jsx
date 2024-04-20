@@ -24,10 +24,10 @@ const Navbar = () => {
             </div>
             <div>
               <div className="flex gap-[16px] ">
-                <p className="text-[24px]">
+                <Link to={"/wishlist"} className="text-[24px]">
                   <IoMdHeartEmpty />
-                </p>
-                <Link to={"/cart"} className="text-[24px]">
+                </Link>
+                <Link className="text-[24px]">
                   <IoCartOutline />
                 </Link>
               </div>
