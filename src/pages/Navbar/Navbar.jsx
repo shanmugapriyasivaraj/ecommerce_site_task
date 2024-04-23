@@ -27,7 +27,7 @@ const Navbar = () => {
                 <Link to={"/wishlist"} className="text-[24px]">
                   <IoMdHeartEmpty />
                 </Link>
-                <Link className="text-[24px]">
+                <Link to={"/cart"} className="text-[24px]">
                   <IoCartOutline />
                 </Link>
               </div>
