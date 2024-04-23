@@ -21,7 +21,7 @@ const ProductDetailsPage = () => {
   }, []);
 
   return (
-    <div className="mt-[160px]">
+    <div className="mt-[160px] mb-20">
       <ProductDetails />
       <div className="mt-[100px]">
         <CategoryHeader title={"Related Items"} btn={false} arrow={false} />
@@ -40,24 +40,7 @@ const ProductDetailsPage = () => {
                   rating={item.rating}
                   userRating={item.stock}
                   isRating={true}
-                />
-              ))}
-        </div>
-        <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px] mt-[50px]">
-          {product &&
-            product
-              .slice(0, 5)
-              .map((item) => (
-                <ProductCard
-                  title={item.title}
-                  offers={item.discountPercentage}
-                  cartIcon={["PiHeadsetDuotone", "PiHeadsetDuotone"]}
-                  image={item.thumbnail}
-                  offerPrice={item.price}
-                  originalPrice={item.price * 2}
-                  rating={item.rating}
-                  userRating={item.stock}
-                  isRating={true}
+                  cartIcons={true}
                 />
               ))}
         </div>
