@@ -4,6 +4,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import Button from "../../../common/components/Button";
 import axios from "axios";
 import CustomInput from "../../../common/components/CustomInput";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -132,15 +133,17 @@ const Cart = () => {
               <p clas="text-base font-normal">Total:</p>
               <p>$1750</p>
             </div>
-            <div class="flex justify-center mb-2">
-              <Button
-                width={260}
-                height={56}
-                bg={true}
-                textColor={true}
-                heading={"Process to Checkout"}
-              />
-            </div>
+            <Link to={"/checkout"}>
+              <div class="flex justify-center mb-2">
+                <Button
+                  width={260}
+                  height={56}
+                  bg={true}
+                  textColor={true}
+                  heading={"Process to Checkout"}
+                />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
