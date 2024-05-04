@@ -5,6 +5,7 @@ import { IoHeartOutline } from "react-icons/io5";
 import { BsEye } from "react-icons/bs";
 import { IoTrashOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../store/features/CartSlice";
 
@@ -76,12 +77,22 @@ function ProductCard({
         {isCartIcon ? (
           <div class="absolute w-[270px] top-[210.5px] h-10 text-base bg-[#000] text-white rounded-[4px] tracking-wider flex max-md:hidden  ">
             <IoCartOutline className="mr-2 mt-[11px] ml-[60px]" />
-            <button className="hover:bg-transparent hover:text-white ml-[3px]">
+            <button
+              className="hover:bg-transparent hover:text-white ml-[3px]"
+              onClick={() => {
+                dispatch(addToCart({ id, title, image, offerPrice }));
+              }}
+            >
               Add To Cart
             </button>
           </div>
         ) : (
-          <button class="absolute w-[270px] top-[210.5px] h-10 text-base bg-[#000] text-white rounded-[4px] tracking-wider hidden group-hover:block ">
+          <button
+            class="absolute w-[270px] top-[210.5px] h-10 text-base bg-[#000] text-white rounded-[4px] tracking-wider hidden group-hover:block "
+            onClick={() => {
+              dispatch(addToCart({ id, title, image, offerPrice }));
+            }}
+          >
             Add To Cart
           </button>
         )}
