@@ -44,6 +44,7 @@ const Home = () => {
             .slice(0, 5)
             .map((item) => (
               <ProductCard
+                id={item.id}
                 title={item.title}
                 offers={item.discountPercentage}
                 cartIcons={true}

@@ -1,24 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import Button from "../../../common/components/Button";
-import axios from "axios";
+import { MdOutlineClear } from "react-icons/md";
+// import axios from "axios";
 import CustomInput from "../../../common/components/CustomInput";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {
+  incrementQuantity,
+  decrementQuantity,
+  removeItem,
+} from "../../../store/features/CartSlice";
 
 const Cart = () => {
-  const [cart, setCart] = useState([]);
+  // const [cartItem, setCartItem] = useState([]);
+  const dispatch = useDispatch();
+  const cartProduct = useSelector((state) => state.cart);
+
+  let shippingPrice = 0;
+
+  const getTotal = () => {
+    let totalQuantity = 0;
+    let totalPrice = 0;
+    cartProduct.cart.map((item) => {
+      totalQuantity += item.quantity;
+      totalPrice += item.offerPrice * item.quantity;
+    });
+    return { totalPrice, totalQuantity };
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const cartDetails = await axios.get("https://dummyjson.com/products");
-        setCart(cartDetails.data.products);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
+    console.log(cartProduct.cart);
   }, []);
   return (
     <>
@@ -49,27 +62,44 @@ const Cart = () => {
             </thead>
 
             <tbody>
-              {cart &&
-                cart.slice(0, 2).map((e) => (
+              {console.log(cartProduct.cart)}
+              {cartProduct.cart &&
+                cartProduct.cart.map((e) => (
                   <>
                     <tr class="rounded borded shadow h-[102px]">
                       <td className="px-12 py-4 ">
-                        <div class="flex gap-[20px] items-center">
-                          <img class="w-[56px] h-[56px]" src={e.thumbnail} />
-                          <p>{e.title}</p>
+                        <div class="flex relative gap-10">
+                          <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
+                            <div className="bg-[#DB4444] p-[1px] w-[18px] h-[18px] rounded-full ">
+                              <MdOutlineClear
+                                className="text-white cursor-pointer"
+                                onClick={() => {
+                                  dispatch(removeItem(e.id));
+                                }}
+                              />
+                            </div>
+                          </div>
+                          <img class="w-[56px] h-[56px]" src={e.image} />
+                          <p className="mt-5">{e.title}</p>
                         </div>
                       </td>
-                      <td className="px-12 py-4 ">${e.price}</td>
+                      <td className="px-12 py-4 ">${e.offerPrice}</td>
                       <td className="px-12 py-4 ">
                         <div class="flex gap-[10px] items-center justify-center w-[72px] h-[44px] rounded border-2 border-black]">
-                          01
+                          {e.quantity}
                           <div>
-                            <IoIosArrowUp />
-                            <IoIosArrowDown />
+                            <IoIosArrowUp
+                              onClick={() => dispatch(incrementQuantity(e.id))}
+                            />
+                            <IoIosArrowDown
+                              onClick={() => dispatch(decrementQuantity(e.id))}
+                            />
                           </div>
                         </div>
                       </td>
-                      <td className="px-12 py-4 ">{"1213"}</td>
+                      <td className="px-12 py-4 ">
+                        {e.quantity * e.offerPrice}
+                      </td>
                     </tr>
                     <br></br>
                   </>
@@ -83,6 +113,7 @@ const Cart = () => {
               bg={false}
               textColor={false}
               heading={"Return to Stop"}
+              isBorder={true}
             />
             <Button
               width={218}
@@ -90,6 +121,7 @@ const Cart = () => {
               bg={false}
               textColor={false}
               heading={"Update Cart"}
+              isBorder={true}
             />
           </div>
         </div>
@@ -120,17 +152,17 @@ const Cart = () => {
             <p class=" text-xl font-medium mt-10 ml-10">Cart Total</p>
             <div class="flex mt-6 ml-10 gap-[290px]">
               <p clas="text-base font-normal">Subtotal:</p>
-              <p>$1750</p>
+              <p>{getTotal().totalPrice}</p>
             </div>
             <div class="mt-4 border-b-2 border-solid text-gray-500 w-[422px] m-auto"></div>
             <div class="flex mt-4 ml-10 gap-[290px]">
               <p clas="text-base font-normal">Shipping:</p>
-              <p>Free</p>
+              <p>{shippingPrice == 0 ? "Free" : shippingPrice}</p>
             </div>
             <div class="mt-4 border-b-2 border-solid text-gray-500 w-[422px] m-auto"></div>
             <div class="flex mt-4 ml-10 gap-[318px]">
               <p clas="text-base font-normal">Total:</p>
-              <p>$1750</p>
+              <p>{shippingPrice + getTotal().totalPrice}</p>
             </div>
             <div class="flex justify-center mb-2">
               <Button

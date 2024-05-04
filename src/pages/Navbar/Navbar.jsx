@@ -3,9 +3,20 @@ import { FiSearch } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 //Components - >
 const Navbar = () => {
+  const cartProduct = useSelector((state) => state.cart);
+
+  const getTotalQuantity = () => {
+    let total = 0;
+    cartProduct.cart.map((item) => {
+      total += item.quantity;
+    });
+    return total;
+  };
+
   return (
     <>
       <nav className=" bg-white fixed top-0 left-0 w-full z-10">
@@ -28,6 +39,11 @@ const Navbar = () => {
                   <IoMdHeartEmpty />
                 </Link>
                 <Link to={"/cart"} className="text-[24px]">
+                  <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="bg-[#DB4444] p-[1px] w-[18px] h-[18px] rounded-full ">
+                      {getTotalQuantity() || 0}
+                    </div>
+                  </div>
                   <IoCartOutline />
                 </Link>
               </div>
