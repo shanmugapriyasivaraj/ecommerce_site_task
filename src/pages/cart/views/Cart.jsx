@@ -12,6 +12,7 @@ import {
   decrementQuantity,
   removeItem,
 } from "../../../store/features/CartSlice";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   // const [cartItem, setCartItem] = useState([]);
