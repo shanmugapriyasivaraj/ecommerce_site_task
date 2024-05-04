@@ -5,8 +5,11 @@ import { IoHeartOutline } from "react-icons/io5";
 import { BsEye } from "react-icons/bs";
 import { IoTrashOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../../../store/features/CartSlice";
 
 function ProductCard({
+  id,
   offers,
   cartIcons,
   image,
@@ -20,6 +23,8 @@ function ProductCard({
   isRating,
   isCartIcon,
 }) {
+  const dispatch = useDispatch();
+
   return (
     <div className="w-full max-w-[270px] group border-transparent rounded-lg relative ">
       <div className="p-9 w-[270px] h-[250px] bg-stone-100 rounded flex justify-center">
