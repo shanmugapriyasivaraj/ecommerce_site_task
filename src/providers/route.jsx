@@ -35,7 +35,7 @@ const route = [
         element: <Wishlist />,
       },
       {
-        path: "/productdetails",
+        path: "/productdetails/:id",
         element: <ProductDetailsPage />,
       },
       {
