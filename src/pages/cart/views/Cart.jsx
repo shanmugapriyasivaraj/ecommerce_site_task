@@ -12,6 +12,7 @@ import {
   decrementQuantity,
   removeItem,
 } from "../../../store/features/CartSlice";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -160,15 +161,17 @@ const Cart = () => {
               <p clas="text-base font-normal">Total:</p>
               <p>{shippingPrice + getTotal().totalPrice}</p>
             </div>
-            <div className="flex justify-center mb-2">
-              <Button
-                width={260}
-                height={56}
-                bg={true}
-                textColor={true}
-                heading={"Process to Checkout"}
-              />
-            </div>
+            <Link to={"/checkout"}>
+              <div className="flex justify-center mb-2">
+                <Button
+                  width={260}
+                  height={56}
+                  bg={true}
+                  textColor={true}
+                  heading={"Process to Checkout"}
+                />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
