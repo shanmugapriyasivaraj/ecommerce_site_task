@@ -54,9 +54,9 @@ const CheckoutForm = () => {
           opacity={40}
           bgColor={"#F5F5F5"}
         />
-        {formik.touched.firstName && formik.errors.firstName ? (
+        {formik.touched.firstName && formik.errors.firstName && (
           <p className="text-red-500">{formik.errors.firstName}</p>
-        ) : null}
+        )}
         <CustomInput
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}

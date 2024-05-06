@@ -44,6 +44,7 @@ const Home = () => {
           product.slice(0, 5).map((item) => (
             <Link to={`/productdetails/${item.id}`}>
               <ProductCard
+                id={item.id}
                 title={item.title}
                 offers={item.discountPercentage}
                 cartIcons={true}

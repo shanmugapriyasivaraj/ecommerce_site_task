@@ -33,7 +33,9 @@ const CustomInput = ({
 
       <input
         value={value}
-        placeholder={`${placeholder}${placeholderRequired ? "*" : ""}`}
+        placeholder={`${placeholder ? placeholder : ""}  ${
+          placeholderRequired ? "*" : ""
+        }`}
         style={{
           width: `${width}px`,
           height: `${height}px`,
