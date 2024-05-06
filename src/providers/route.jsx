@@ -1,6 +1,7 @@
 import React from "react";
 import Wishlist from "../pages/Wishlist/views/Wishlist";
 import ProductDetailsPage from "../pages/productDetails/views/ProductDetailsPage";
+import Checkout from "../pages/checkout/views/Checkout";
 const BaseLayout = React.lazy(() => import("../pages/BaseLayout"));
 const Home = React.lazy(() => import("../pages/Home/views/Home"));
 const About = React.lazy(() => import("../pages/About/views/About"));
@@ -45,6 +46,10 @@ const route = [
       {
         path: "*",
         element: <Error />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
   },
