@@ -38,12 +38,19 @@ const Navbar = () => {
                 <Link to={"/wishlist"} className="text-[24px]">
                   <IoMdHeartEmpty />
                 </Link>
-                <Link to={"/cart"} className="text-[24px]">
-                  <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">
-                    <div className="bg-[#DB4444] p-[1px] w-[18px] h-[18px] rounded-full ">
-                      {getTotalQuantity() || 0}
+                <Link to={"/cart"} className="text-[24px] relative">
+                  {getTotalQuantity() == 0 ? (
+                    <p></p>
+                  ) : (
+                    <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
+                      <div className="bg-[#DB4444]  w-[16px] h-[16px] rounded-full ">
+                        <p className="text-xs text-white px-1">
+                          {" "}
+                          {getTotalQuantity()}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                   <IoCartOutline />
                 </Link>
               </div>
