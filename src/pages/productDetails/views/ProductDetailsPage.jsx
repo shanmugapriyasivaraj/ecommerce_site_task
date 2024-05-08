@@ -7,18 +7,29 @@ import { FaStar } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FaTruckFast } from "react-icons/fa6";
+import { IoHeartOutline } from "react-icons/io5";
+import { IoMdHeart } from "react-icons/io";
+
 import { HiArrowPath } from "react-icons/hi2";
 import Button from "../../../common/components/Button";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Cart from "../../cart/views/Cart";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addToWishlist } from "../../../store/features/WishlistSlice";
+import { addToCart } from "../../../store/features/CartSlice";
 
 const ProductDetailsPage = () => {
   const [product, setProduct] = useState([]);
   const [singleProduct, setSingleProduct] = useState({});
-  const [quantity, setQuantity] = useState(2);
+  const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("M");
   const [selectedMod, setSelectedMod] = useState(singleProduct.thumbnail);
+  const wishlistProduct = useSelector((state) => state.wishlist);
+  const cartProduct = useSelector((state) => state.cart);
 
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getData = async () => {
@@ -62,6 +73,22 @@ const ProductDetailsPage = () => {
 
   const handleIncrement = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+  const handleAddToWishlist = () => {
+    dispatch(
+      addToWishlist({
+        id: singleProduct.id,
+        title: singleProduct.title,
+        offers: singleProduct.discountPercentage,
+        image: selectedMod || singleProduct.thumbnail,
+        offerPrice: singleProduct.price,
+        originalPrice: singleProduct.price * 2,
+        rating: singleProduct.rating,
+        userRating: singleProduct.userRating,
+        isWishlist: !wishlistProduct.wishlist.find((item) => item.id === id)
+          ?.isWishlist,
+      })
+    );
   };
 
   return (
@@ -161,7 +188,18 @@ const ProductDetailsPage = () => {
                   +
                 </div>
               </div>
+
               <Button
+                onclick={() => {
+                  dispatch(
+                    addToCart({
+                      id: singleProduct.id,
+                      title: singleProduct.title,
+                      image: selectedMod || singleProduct.thumbnail,
+                      offerPrice: singleProduct.price,
+                    })
+                  );
+                }}
                 height={42}
                 width={140}
                 bg={true}
@@ -169,11 +207,19 @@ const ProductDetailsPage = () => {
                 heading={"Buy Now"}
                 isBorder={false}
               />
+
               {/* <div className="h-[42px] w-[140px] border border-black border-opacity-25 rounded flex items-center justify-center text-[20px] font-sans">
               Buy Now
             </div> */}
-              <div className="h-[42px] w-[40px] border border-black border-opacity-25 rounded flex items-center justify-center">
-                <FaRegHeart />
+
+              <div className="h-[42px] w-[40px] border border-black border-opacity-25 rounded flex items-center justify-center cursor-pointer">
+                {wishlistProduct.wishlist.find(
+                  (item) => item.id === singleProduct.id
+                )?.isWishlist ? (
+                  <IoMdHeart onClick={handleAddToWishlist} />
+                ) : (
+                  <IoHeartOutline onClick={handleAddToWishlist} />
+                )}
               </div>
             </div>
 
@@ -239,3 +285,12 @@ const ProductDetailsPage = () => {
 };
 
 export default ProductDetailsPage;
+
+// id: singleProduct.id,
+// title: singleProduct.title,
+// offers: singleProduct.discountPercentage,
+// image: selectedMod || singleProduct.thumbnail,
+// offerPrice: singleProduct.price,
+// originalPrice: singleProduct.price * 2,
+// rating: singleProduct.rating,
+// userRating: singleProduct.userRating,

@@ -1,6 +1,14 @@
 import React from "react";
 
-const Button = ({ width, height, bg, textColor, heading, isBorder }) => {
+const Button = ({
+  width,
+  height,
+  bg,
+  textColor,
+  heading,
+  isBorder,
+  onclick,
+}) => {
   const borderColor = textColor ? "#ffffff" : "#000000";
   return (
     <>
@@ -15,6 +23,7 @@ const Button = ({ width, height, bg, textColor, heading, isBorder }) => {
           fontSize: "16px",
           fontWeight: 500,
         }}
+        onClick={onclick}
       >
         {heading}
       </button>

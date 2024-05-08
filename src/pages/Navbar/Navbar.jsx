@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 //Components - >
 const Navbar = () => {
   const cartProduct = useSelector((state) => state.cart);
+  const wishlistProduct = useSelector((state) => state.wishlist);
 
   const getTotalQuantity = () => {
     let total = 0;
@@ -35,9 +36,22 @@ const Navbar = () => {
             </div>
             <div>
               <div className="flex gap-[16px] ">
-                <Link to={"/wishlist"} className="text-[24px]">
+                <Link to={"/wishlist"} className="text-[24px] relative">
+                  {wishlistProduct.wishlist.length == 0 ? (
+                    <p></p>
+                  ) : (
+                    <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
+                      <div className="bg-[#DB4444]  w-[16px] h-[16px] rounded-full ">
+                        <p className="text-xs text-white px-1">
+                          {" "}
+                          {wishlistProduct.wishlist.length}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                   <IoMdHeartEmpty />
                 </Link>
+
                 <Link to={"/cart"} className="text-[24px] relative">
                   {getTotalQuantity() == 0 ? (
                     <p></p>
