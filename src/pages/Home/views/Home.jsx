@@ -11,7 +11,6 @@ import Button from "../../../common/components/Button";
 import Features from "../component/features/Features";
 import { PiHeadsetDuotone } from "react-icons/pi";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   const [product, setProduct] = useState([]);
@@ -41,8 +40,9 @@ const Home = () => {
       />
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]  ">
         {product &&
-          product.slice(0, 5).map((item) => (
-            <Link to={`/productdetails/${item.id}`}>
+          product
+            .slice(1, 6)
+            .map((item) => (
               <ProductCard
                 id={item.id}
                 title={item.title}
@@ -55,8 +55,7 @@ const Home = () => {
                 userRating={item.stock}
                 isRating={true}
               />
-            </Link>
-          ))}
+            ))}
       </div>
 
       {/* {button} */}
