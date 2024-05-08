@@ -90,9 +90,10 @@ const Home = () => {
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]">
         {product &&
           product
-            .slice(0, 5)
+            .slice(1, 6)
             .map((item) => (
               <ProductCard
+                id={item.id}
                 title={item.title}
                 offers={item.discountPercentage}
                 cartIcons={true}
@@ -119,9 +120,10 @@ const Home = () => {
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px]">
         {product &&
           product
-            .slice(0, 5)
+            .slice(1, 6)
             .map((item) => (
               <ProductCard
+                id={item.id}
                 title={item.title}
                 offers={item.discountPercentage}
                 cartIcons={true}
@@ -137,9 +139,10 @@ const Home = () => {
       <div class="m-auto w-[90%] flex overflow-x-auto gap-[30px] mt-[50px]">
         {product &&
           product
-            .slice(0, 5)
+            .slice(1, 6)
             .map((item) => (
               <ProductCard
+                id={item.id}
                 title={item.title}
                 offers={item.discountPercentage}
                 cartIcons={true}
