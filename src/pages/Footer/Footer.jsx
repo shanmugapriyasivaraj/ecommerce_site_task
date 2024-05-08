@@ -4,6 +4,7 @@ import { IoLogoInstagram } from "react-icons/io";
 import { CiTwitter } from "react-icons/ci";
 import { RiLinkedinLine } from "react-icons/ri";
 import { LuSendHorizonal } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 // Assets
 import QR from "../Footer/assets/qr.png";
@@ -60,15 +61,21 @@ const Footer = () => {
             <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
               Login / Register
             </p>
-            <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
-              Cart
-            </p>
-            <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
-              Wishlist
-            </p>
-            <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
-              Shop
-            </p>
+            <Link to="/cart">
+              <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
+                Cart
+              </p>
+            </Link>
+            <Link to="/wishlist">
+              <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
+                Wishlist
+              </p>
+            </Link>
+            <Link to="/">
+              <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
+                Shop
+              </p>
+            </Link>
           </div>
           <div className="w-[109px] flex flex-col gap-6 mt-[80px] ">
             <p className="text-[20px] text-[--title-color] font-poppins font-[500]">
@@ -84,9 +91,11 @@ const Footer = () => {
             <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
               FAQ
             </p>
-            <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
-              Contact
-            </p>
+            <Link to="/contact">
+              <p className="text-[16px] flex text-[--title-color] font-poppins font-[400]">
+                Contact
+              </p>
+            </Link>
           </div>
           <div className="w-[217px] flex flex-col gap-6 mt-[80px] ">
             <p className="text-[20px] text-[--title-color] font-poppins font-[500]">
@@ -96,9 +105,7 @@ const Footer = () => {
               Save $3 with App New User Only
             </p>
             <div className="flex gap-3">
-              {" "}
               <div className="h-[78px] w-[76px] rounded border-1 border border-[--title-color]">
-                {" "}
                 <img
                   src={QR}
                   alt=""
@@ -107,7 +114,6 @@ const Footer = () => {
               </div>
               <div className="flex flex-col gap-3">
                 <div className="h-[30px] rounded w-[104px] border-b border border-[--title-color]">
-                  {" "}
                   <img
                     src={Google}
                     alt=""
@@ -115,7 +121,6 @@ const Footer = () => {
                   />
                 </div>
                 <div className="h-[32px] rounded w-[104px] border   border-[--title-color]">
-                  {" "}
                   <img
                     src={Apple}
                     alt=""
