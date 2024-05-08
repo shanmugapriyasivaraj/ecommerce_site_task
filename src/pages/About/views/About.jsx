@@ -13,6 +13,7 @@ import Img3 from "../../../assets/aboutAssets/about4.png";
 import { CiTwitter } from "react-icons/ci";
 import { IoLogoInstagram } from "react-icons/io";
 import { RiLinkedinLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const profileData = [
@@ -59,7 +60,10 @@ const About = () => {
       <div className="mt-[240px] mb-8 ml-[5%]">
         <div className="flex gap-[200px] ">
           <div className="text-[14px] flex ">
-            <p className="opacity-50">Home</p>
+            <Link to={"/"}>
+              {" "}
+              <p className="opacity-50">Home</p>
+            </Link>
             <span className="mx-2">/</span> About
           </div>
         </div>
