@@ -29,16 +29,21 @@ function ProductCard({
   return (
     <div className="w-full max-w-[270px] group border-transparent rounded-lg relative ">
       <div className="p-9 w-[270px] h-[250px] bg-stone-100 rounded flex justify-center">
-        <img
-          class="p-5 w-[190px] height-[180px] "
-          src={image}
-          alt="product image"
-        />
+        <div className="w-[190px] h-[180px] object-contain">
+          <Link to={`/productdetails/${id}`}>
+            <img
+              class="p-5 w-[190px] h-[100%] object-cover"
+              src={image}
+              alt="product image"
+            />
+          </Link>
+        </div>
+
         {cartIcons ? (
           <div className="absolute top-0 ml-[150px] flex items-center justify-center ">
             <div className="flex-inline-block space-x-5 ml-10">
               <div className="bg-[#FFFFFF] mt-2 ml-[20px] rounded-full h-8 w-8 flex items-center justify-center">
-                <IoHeartOutline className="text-[#000]" />{" "}
+                <IoHeartOutline className="text-[#000]" />
               </div>
               <div className="bg-[#fff] mt-2 rounded-full h-8 w-8 flex items-center justify-center">
                 <BsEye className="text-[#000]" />
