@@ -90,10 +90,10 @@ const About = () => {
             <img className="h-[405px] w-[505px]" src={AboutImg} />
           </div>
         </div>
-        <div className="flex gap-12">
+        <div className="flex gap-12 ">
           {AboutData &&
             AboutData.map((e) => (
-              <div className="mt-[100px] w-[270px] h-[230px] hover:bg-[#DB4444]  hover:text-white rounded border-2 border-neutral-400">
+              <div className="mt-[100px] w-[270px] ml-8 h-[230px] hover:bg-[#DB4444]  hover:text-white rounded border-2 border-neutral-400">
                 <div class="flex flex-col gap-[20px] justify-center mt-[30px] text-center  h-[161px] mb-[100px] p-[2]">
                   <div class=" mx-[100px] h-[77px] w-[77px] rounded-full justify-center text-center align-center bg-neutral-500 p-2">
                     <div class="mx-[1px] h-[60px] w-[60px] p-2 rounded-full bg-black">
@@ -113,7 +113,7 @@ const About = () => {
         <div className="flex gap-12">
           {profileData &&
             profileData.map((e) => (
-              <div className=" flex flex-col gap-1 mt-[100px] h-[564px] w-[370px]">
+              <div className=" flex flex-col gap-1 mt-[100px] h-[564px] ml-10 w-[370px]">
                 <div className="h-[430px] pt-10  bg-[#F5F5F5]">
                   <img
                     className="h-[391px]  mx-[67px]  w-[236px]"
